@@ -8,7 +8,7 @@
 * グローバル変数は `*global-variable*`
 
 ### VSCode を利用
-* エディタは [VSCode|https://marketplace.visualstudio.com/items?itemName=ailisp.commonlisp-vscode] を利用
+* エディタは [VSCode](https://marketplace.visualstudio.com/items?itemName=ailisp.commonlisp-vscode) を利用
 ```bash
 # roswell をインストールしパスを通す (省略)
 
@@ -23,5 +23,5 @@ ros install ailisp/cl-lsp
 * VSCode 上でクイックオープンを開いて `ext install ailisp.commonlisp-vscode`
 
 ## 参照
-* [Google Common Lisp スタイルガイド 日本語訳|https://lisphub.jp/doc/google-common-lisp-style-guide/lispguide.xml]
-* [Tutorial on Good Lisp Programming Style|http://norvig.com/luv-slides.ps]
+* [Google Common Lisp スタイルガイド 日本語訳](https://lisphub.jp/doc/google-common-lisp-style-guide/lispguide.xml)
+* [Tutorial on Good Lisp Programming Style](http://norvig.com/luv-slides.ps)
