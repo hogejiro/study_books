@@ -1,6 +1,22 @@
 ## 1 章
-* Lisp は Common Lisp / Scheme が主流となる方言である
-* Common Lisp はマルチパラダイム言語である
+* Lisp の主流な方言は Common Lisp / Scheme
+* Common Lisp はマルチパラダイム言語
+
+## 2 章
+* グローバル変数定義は `defparameter`
+* ローカル変数定義は `let`
+* グローバル関数定義は `defun`
+* ローカル関数定義は `flet` か `labels`
+  * 再起、相互参照がしたいなら `labels`
+
+## 3 章
+* 基本構成要素はシンボル、数値、文字列
+* Common Lisp の基本的なデータ構造ははコンスセル
+
+## 4 章
+* Common Lisp では `nil = 'nil = () = '()`
+* Common Lisp では nil 以外は真
+* シンボルの比較は `eq`、それ以外の比較は `equal`
 
 ## 実装メモ
 ### コード規約
