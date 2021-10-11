@@ -64,6 +64,26 @@
 * `intersection`, `remove-duplicates` を使えば複数のリストの共通要素や重複要素が取れる
 * `mapcan` は `mapcar` の仲間で、リストを返す関数を受け取り、関数の結果のリスト達を自動的に `append` して返す
 
+## 9 章
+* Common Lisp には配列、ハッシュテーブル、構造体といったデータ構造が存在する
+* Common Lisp はジェネリックなセッターをサポートしている
+  * データ構造から値を取り出すコードと、データ構造に値を入れるコードが同じ形で書けることを意味する
+* `setf` の最初の引数は汎変数 (general variable) と呼ばれる特別なミニ言語となっている
+* 配列はリストよりも高速。ハッシュテーブルは連想リストよりも高速
+* 関数で複数の値を返すようにするには `values` を使う
+  * 代わりにリストを返しても良い。Arc や Clojure では複数の値をサポートしてない
+* ハッシュテーブルは高性能だがデバッグしづらい (REPL で自然に中身が出力されない、直接リテラルをタイプ出来ない)
+  * Clojure など最近の Lisp 言語ではリテラルのハッシュテーブル (マップ) をサポートしている
+* 構造体 (属性を持つオブジェクト) を作るには `defstruct` コマンドを使う。
+  * このコマンドは構造体のインスタンスを作る関数や属性へのアクセス関数を自動的に作る
+* シーケンス関数はリスト、配列、文字列を統一的に扱えるジェネリックな関数である
+  * `length`, `find-if`, `count`, `position`, `some`, `every`, `reduce`, `map`, `subseq`, `sort`
+  * 詳しくは [Common Lisp Hyperspec](http://www.lispworks.com/documentation/lw51/CLHS/Body/c_sequen.htm) を参照
+* 型述語を使えば型判定が出来るので色々な方の引数を受け取るジェネリックな関数が自作できる
+  * `arrayp`, `characterp`, `consp`, `functionp`, `hash-table-p`, `listp`, `stringp`, `symbolp`
+  * 性能やコード視認性、保守性の問題があり型述語を使ってジェネリックな関数を作ることはあまり無い
+* 一つの関数を引数の型に応じて処理を切り替えたいときは `defmethod` を使うほうが良い
+
 ## 実装メモ
 ### コード規約
 * 基本的に `-` 繋ぎで大文字は使わない
@@ -87,3 +107,4 @@ ros install ailisp/cl-lsp
 ## 参照
 * [Google Common Lisp スタイルガイド 日本語訳](https://lisphub.jp/doc/google-common-lisp-style-guide/lispguide.xml)
 * [Tutorial on Good Lisp Programming Style](http://norvig.com/luv-slides.ps)
+* [Common Lisp Hyperspec](http://www.lispworks.com/documentation/common-lisp.html)
