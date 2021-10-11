@@ -1,4 +1,4 @@
-(load "./07/graph-util")
+(load "./07-going-beyond-basic-lists/graph-util")
 
 (defparameter *congestion-city-nodes* nil)
 (defparameter *congestion-city-edges* nil)
