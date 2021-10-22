@@ -95,6 +95,16 @@
 * `collect` は一つ以上の値をリストにまとめて `loop` の値としたい時に使う節
 * `copy-structure` は構造体の浅いコピーを行う。リストや他の構造体はコピー元と共有するので、改めて `setf` する必要あり
 
+## 11 章
+* `format` は Common Lisp における最も強力なテキスト表示関数である
+* 第 1 引数で出力先を指定する。
+* 第 2 引数は制御文字列と呼ばれる。制御文字列のテキストは原則としてそのまま出力されるが、制御シーケンス (ex: `~s`, `~a`) は出力形式に影響する
+  * 制御シーケンス (Control Sequences) は format directives とか format specifiers とも呼ばれてたりする模様
+  * [Common Lisp Hyperspec](http://www.lispworks.com/documentation/HyperSpec/Body/22_c.htm) に色々載っているが [この Scheme のサイト](https://www.gnu.org/software/kawa/Format.html) の方が見やすく網羅されている
+* `format` の制御シーケンスはそれ自体がドメイン特化言語とみなされている
+* `~{` と `~}` を含んだ制御文字列とリストを与えると `format` はリスト中のデータをループで処理する
+
+
 ## 実装メモ
 ### コード規約
 * 基本的に `-` 繋ぎで大文字は使わない
