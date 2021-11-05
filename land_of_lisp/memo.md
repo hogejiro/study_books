@@ -39,6 +39,7 @@
 * Lisp でリテラル文字を表すには文字の前に `#\` を置く
 * Lisp はプログラムコードとデータを同じデータ構造を使って扱う (homoiconic)
 * `'foo = (quote foo)`
+* `coerce` は型変換を行う関数
 
 ## 6.5 章
 * `(lambda (x) x)` は lambda マクロ
@@ -117,6 +118,16 @@
 * 文字列ストリームを使えばストリームを要求する関数のデバッグに便利
   * `with-output-to-string` を使えばコンソールや REPL や他のストリームに行くはずだった出力を文字列ストリームに向けられる
 
+## 13 章
+* Common Lisp では例外処理のためにコンディションというオブジェクトを授受する
+* `define-condition` で定義可能
+* `error` 関数でコンディションの通知が出来る
+* `handle-case` コマンドでコンディションの通知を横取りしてプログラムを止めないように出来る
+* どんなエラーが起きても走らせたいコードには `unwind-protect` コマンドを使う
+* `position` は文字列から指定した文字を探してその位置を返す関数
+* `intern` は文字列を Lisp のシンボルに変換する関数
+* `make-string-input-stream` 関数でリテラル文字列から入力ストリームを作成できる
+
 ## 実装メモ
 ### コード規約
 * 基本的に `-` 繋ぎで大文字は使わない
@@ -136,6 +147,12 @@ ros install ailisp/prepl
 ros install ailisp/cl-lsp
 ```
 * VSCode 上でクイックオープンを開いて `ext install ailisp.commonlisp-vscode`
+
+### 13 章に関して
+* ソケットに関しては `usocket` を使うのが楽
+  * `usocket` の中で使ってる `sb-bsd-sockets` を直接使っても出来そう
+* サンプルコードのままだと現行のブラウザではリクエストが通らない模様
+  * `"HTTP/1.1 200 OK\n\n"` などのステータスラインをきちんと出力すること
 
 ## 参照
 * [Google Common Lisp スタイルガイド 日本語訳](https://lisphub.jp/doc/google-common-lisp-style-guide/lispguide.xml)
