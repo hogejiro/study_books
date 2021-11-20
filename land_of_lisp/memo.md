@@ -136,6 +136,14 @@
 * 関数型プログラミングは適切に記述すればバグを起こしづらく簡潔なコードになる強みがあるが、性能に難がある
   * メモ化、末尾呼び出し最適化、遅延評価、高階プログラミングなどの工夫をしている
 
+## 15 章
+* 関数型プログラミングを使い、ゲームのコードを三つに分けて設計する
+  * 人間の指し手を処理する部分
+  * AI プレーヤー
+  * ルールエンジン
+* 後の章では更に遅延評価を使った遅延ゲームツリーと関数パイプラインを使ってゲームを作る
+* 二人用対戦ゲームについては、ミニマックスアルゴリズムを使えば相手の動きを簡単にモデル化可能
+
 ## 実装メモ
 ### コード規約
 * 基本的に `-` 繋ぎで大文字は使わない
@@ -166,3 +174,4 @@ ros install ailisp/cl-lsp
 * [Google Common Lisp スタイルガイド 日本語訳](https://lisphub.jp/doc/google-common-lisp-style-guide/lispguide.xml)
 * [Tutorial on Good Lisp Programming Style](http://norvig.com/luv-slides.ps)
 * [Common Lisp Hyperspec](http://www.lispworks.com/documentation/common-lisp.html)
+* [なぜ関数型プログラミングは重要か](https://www.sampou.org/haskell/article/whyfp.html)
