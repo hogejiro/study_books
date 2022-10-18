@@ -44,3 +44,50 @@ let seiza_test2 = seiza 4 2 = "牡羊座"
 let seiza_test3 = seiza 7 1 = "蟹座"
 let seiza_test4 = seiza 10 6 = "天秤座"
 let seiza_test5 = seiza 12 2 = "射手座"
+
+(* 5.4 *)
+(* 目的: 二次方程式 ax^2+bx+c=0 の係数 (a,b,c いずれも実数。a は 0 でない) を与えられたら判別式の値を返す *)
+(* hanbetsushiki: float -> float -> float -> float *)
+let hanbetsushiki a b c = b *. b -. 4.0 *. a *. c
+
+let hanbetsushiki_test1 = hanbetsushiki 1.0 2.0 1.0 = 0.0
+let hanbetsushiki_test2 = hanbetsushiki 1.0 5.0 6.0 = 1.0
+let hanbetsushiki_test3 = hanbetsushiki (-4.0) 2.0 (-2.0) = -28.0
+
+(* 5.5 *)
+(* 目的: 5.4 と同条件で解の個数を返す *)
+(* kai_no_kosuu: float -> float -> float -> int *)
+let kai_no_kosuu a b c =
+  if hanbetsushiki a b c > 0.0
+    then 2
+  else if hanbetsushiki a b c = 0.0
+    then 1
+    else 0
+
+let kai_no_kosuu_test1 = kai_no_kosuu 1. 2.0 1.0 = 1
+let kai_no_kosuu_test2 = kai_no_kosuu 1. 7.0 12.0 = 2
+let kai_no_kosuu_test3 = kai_no_kosuu (-4.0) 2.0 (-3.0) = 0
+
+(* 5.6 *)
+(* 目的: 5.4 と同条件で虚数解を持つかどうかを判定する *)
+(* kyosuukai: float -> float -> float -> bool *)
+let kyosuukai a b c = hanbetsushiki a b c < 0.0
+
+let kyosuukai_test1 = kyosuukai 1.0 2.0 1.0 = false
+let kyosuukai_test2 = kyosuukai (-4.0) 2.0 (-2.0) = true
+let kyosuukai_test3 = kyosuukai 2.0 4.0 1.0 = false
+
+(* 5.7 *)
+(* 目的: 身長と体重を与えられたら BMI 指数を計算し数値に寄って体型を返す *)
+(* taikei: float -> float -> string *)
+let bmi shincho taiju = taiju /. (shincho ** 2.0)
+let taikei shincho taiju =
+       if bmi shincho taiju < 18.5 then "やせ"
+  else if bmi shincho taiju < 25.0 then "標準"
+  else if bmi shincho taiju < 30.0 then "肥満"
+  else "高度肥満"
+
+let taikei_test1 = taikei 1.7 40.0 = "やせ"
+let taikei_test2 = taikei 1.7 56.0 = "標準"
+let taikei_test3 = taikei 1.7 74.0 = "肥満"
+let taikei_test4 = taikei 1.7 88.0 = "高度肥満"
