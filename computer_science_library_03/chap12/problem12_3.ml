@@ -9,6 +9,6 @@ let rec shokika elst kiten = match elst with
       then {namae = kiten; saitan_kyori = 0.; temae_list = [kiten]}::rest
       else first::shokika elst kiten
 
-let test1 = shokika [] "omotesando" = [{namae = "omotesando"; saitan_kyori = 0.; temae_list = ["omotesando"]}]
-let test2 = shokika [] "nogizaka" = [{namae = "nogizaka"; saitan_kyori = 0.; temae_list = ["nogizaka"]}]
-let test3 = shokika [] "akasaka" = [{namae = "akasaka"; saitan_kyori = 0.; temae_list = ["akasaka"]}]
+let test1 = shokika [] "表参道" = [{namae = "表参道"; saitan_kyori = 0.; temae_list = ["表参道"]}]
+let test2 = shokika [] "乃木坂" = [{namae = "乃木坂"; saitan_kyori = 0.; temae_list = ["乃木坂"]}]
+let test3 = shokika [] "赤坂" = [{namae = "赤坂"; saitan_kyori = 0.; temae_list = ["赤坂"]}]
