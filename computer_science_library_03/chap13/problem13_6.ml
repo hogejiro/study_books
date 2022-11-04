@@ -16,8 +16,8 @@ let koushin1 p q = match (p, q) with
     let kyori = get_ekikan_kyori pn qn global_ekikan_list in
     if kyori = infinity
       then q
-      else if ps + kyori < qs
-             then {namae = qn; saitan_kyori = ps + kyori; temae_list = qn::pt}
+      else if ps +. kyori < qs
+             then {namae = qn; saitan_kyori = ps +. kyori; temae_list = qn::pt}
              else q
 
 let test1 = koushin1 eki3 eki1 = eki1
