@@ -29,9 +29,9 @@ mod tests{
     }
     #[test]
     fn test_luhn() {
-        assert_eq!(luhn("49927398716"), true);
-        assert_eq!(luhn("49927398717"), false);
-        assert_eq!(luhn("1234567812345678"), false);
+        assert_eq!(luhn("3566002020360505"), true);
+        assert_eq!(luhn("4242424242424242"), true);
+        assert_eq!(luhn("378282246310005"), true);
         assert_eq!(luhn("1234567812345675"), false);
         assert_eq!(luhn("1234567812345670"), true);
     }
